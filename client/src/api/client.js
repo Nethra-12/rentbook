@@ -7,7 +7,7 @@ import { mockApi } from './mock.js';
    false -> every call goes to your Express server through /api
    Flip this to false once your routes are working.
    --------------------------------------------------------------- */
-export const USE_MOCK = true;
+export const USE_MOCK = false;
 
 // A pre-configured axios instance. Every request made with `http`
 // automatically gets the base URL and the auth header.

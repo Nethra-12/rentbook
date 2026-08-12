@@ -59,7 +59,7 @@ export default function OwnerComplaints() {
                   </div>
                   <p className="text-sm text-muted mt-1 max-w-xl">{c.description}</p>
                   <p className="text-xs text-muted mt-2">
-                    Room {c.room} · {c.tenant} · raised {c.createdAt}
+                    Room {c.room} · {c.tenant?.name || 'Unknown'} · raised {new Date(c.createdAt).toLocaleDateString('en-IN')}
                   </p>
                 </div>
 

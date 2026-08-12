@@ -25,4 +25,7 @@ const billRoutes = require('./routes/billRoutes');
 
 app.use('/api/bills', billRoutes);
 const PORT = process.env.PORT || 5000;
+const dashboardRoutes = require('./routes/dashboardRoutes');
+
+app.use('/api', dashboardRoutes);
 app.listen(PORT, () => console.log(`Server on http://localhost:${PORT}`));
