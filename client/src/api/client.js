@@ -11,7 +11,11 @@ export const USE_MOCK = false;
 
 // A pre-configured axios instance. Every request made with `http`
 // automatically gets the base URL and the auth header.
-const http = axios.create({ baseURL: '/api' });
+// In development Vite proxies /api to localhost:5000.
+// In production VITE_API_URL points at the deployed backend.
+const http = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || '/api',
+});
 
 // An interceptor runs before each request leaves the browser. This one
 // attaches the JWT so protected backend routes will accept the call.
